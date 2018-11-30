@@ -14,6 +14,7 @@
 		1DAD021521B1453C00B334D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD021421B1453C00B334D0 /* Assets.xcassets */; };
 		1DAD021821B1453C00B334D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD021621B1453C00B334D0 /* LaunchScreen.storyboard */; };
 		1DAD022321B1453C00B334D0 /* EarthquakeWatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD022221B1453C00B334D0 /* EarthquakeWatcherTests.swift */; };
+		5923A2BD756495A716A31F81 /* libPods-EarthquakeWatcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E95B5A11AE3A01E7115EC3FF /* libPods-EarthquakeWatcher.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,9 @@
 		1DAD021E21B1453C00B334D0 /* EarthquakeWatcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthquakeWatcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DAD022221B1453C00B334D0 /* EarthquakeWatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeWatcherTests.swift; sourceTree = "<group>"; };
 		1DAD022421B1453C00B334D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58407B0B2B85F573FDECEAD0 /* Pods-EarthquakeWatcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthquakeWatcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EarthquakeWatcher/Pods-EarthquakeWatcher.debug.xcconfig"; sourceTree = "<group>"; };
+		A555E16E655526BA9BD9B65E /* Pods-EarthquakeWatcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthquakeWatcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-EarthquakeWatcher/Pods-EarthquakeWatcher.release.xcconfig"; sourceTree = "<group>"; };
+		E95B5A11AE3A01E7115EC3FF /* libPods-EarthquakeWatcher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EarthquakeWatcher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5923A2BD756495A716A31F81 /* libPods-EarthquakeWatcher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,8 @@
 				1DAD020A21B1453A00B334D0 /* EarthquakeWatcher */,
 				1DAD022121B1453C00B334D0 /* EarthquakeWatcherTests */,
 				1DAD020921B1453A00B334D0 /* Products */,
+				5BD4ED1DA5BA63A4281B8689 /* Pods */,
+				2AB18D03B2E0185AAB158EC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +162,23 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		2AB18D03B2E0185AAB158EC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E95B5A11AE3A01E7115EC3FF /* libPods-EarthquakeWatcher.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BD4ED1DA5BA63A4281B8689 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58407B0B2B85F573FDECEAD0 /* Pods-EarthquakeWatcher.debug.xcconfig */,
+				A555E16E655526BA9BD9B65E /* Pods-EarthquakeWatcher.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DAD022721B1453C00B334D0 /* Build configuration list for PBXNativeTarget "EarthquakeWatcher" */;
 			buildPhases = (
+				AA12BA041E60DC7FC6E18EF1 /* [CP] Check Pods Manifest.lock */,
 				1DAD020421B1453A00B334D0 /* Sources */,
 				1DAD020521B1453A00B334D0 /* Frameworks */,
 				1DAD020621B1453A00B334D0 /* Resources */,
+				3F1CA9819A00F781726445D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +276,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F1CA9819A00F781726445D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EarthquakeWatcher/Pods-EarthquakeWatcher-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EarthquakeWatcher/Pods-EarthquakeWatcher-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA12BA041E60DC7FC6E18EF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EarthquakeWatcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1DAD020421B1453A00B334D0 /* Sources */ = {
@@ -418,6 +485,7 @@
 		};
 		1DAD022821B1453C00B334D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58407B0B2B85F573FDECEAD0 /* Pods-EarthquakeWatcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -436,6 +504,7 @@
 		};
 		1DAD022921B1453C00B334D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A555E16E655526BA9BD9B65E /* Pods-EarthquakeWatcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
