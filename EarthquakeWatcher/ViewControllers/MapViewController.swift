@@ -9,9 +9,9 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
     
-    var gmsMapView: GMSMapView?
+    var gmsMapView: GMSMapView? // Convenience
     
     override func loadView() {
         super.loadView()
@@ -27,12 +27,11 @@ class MapViewController: UIViewController {
     private func makeMapView() {
         
         let gmsMapView = GMSMapView(frame: self.view.bounds)
-        
         gmsMapView.delegate = self
         gmsMapView.isMyLocationEnabled = true
         gmsMapView.settings.myLocationButton = true
         
-        view = gmsMapView
+        self.view = gmsMapView
         self.gmsMapView = gmsMapView
     }
 }
