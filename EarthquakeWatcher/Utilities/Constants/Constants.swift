@@ -12,6 +12,6 @@ struct Constants {
     
     struct General {
         
-        static let infoPlistName: String = "info"
+        static let infoPlistName: String = "Info"
     }
 }

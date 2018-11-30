@@ -94,15 +94,15 @@
 		1DAD020A21B1453A00B334D0 /* EarthquakeWatcher */ = {
 			isa = PBXGroup;
 			children = (
-				1DAE808E21B1509E00402655 /* Utilities */,
 				1DAD021921B1453C00B334D0 /* Info.plist */,
+				1DAD022D21B147C000B334D0 /* ViewControllers */,
+				1DAD022F21B1480900B334D0 /* ViewModels */,
 				1DAD023221B1486A00B334D0 /* Clients */,
 				1DAD023121B1486100B334D0 /* Managers */,
 				1DAD022E21B147DF00B334D0 /* App */,
-				1DAD022D21B147C000B334D0 /* ViewControllers */,
-				1DAD022F21B1480900B334D0 /* ViewModels */,
 				1DAD023321B14A1F00B334D0 /* Storyboards */,
 				1DAD023021B1481500B334D0 /* Models */,
+				1DAE808E21B1509E00402655 /* Utilities */,
 			);
 			path = EarthquakeWatcher;
 			sourceTree = "<group>";

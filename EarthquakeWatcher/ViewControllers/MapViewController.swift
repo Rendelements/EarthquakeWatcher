@@ -7,14 +7,37 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class MapViewController: UIViewController {
-
+    
+    var gmsMapView: GMSMapView?
+    
+    override func loadView() {
+        super.loadView()
+        
+        makeMapView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-
+    
+    private func makeMapView() {
+        
+        let gmsMapView = GMSMapView(frame: self.view.bounds)
+        
+        gmsMapView.delegate = self
+        gmsMapView.isMyLocationEnabled = true
+        gmsMapView.settings.myLocationButton = true
+        
+        view = gmsMapView
+        self.gmsMapView = gmsMapView
+    }
 }
 
+extension MapViewController: GMSMapViewDelegate {
+    
+    
+}
