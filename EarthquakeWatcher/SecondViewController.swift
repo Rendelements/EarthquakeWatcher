@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  ListViewController.swift
 //  EarthquakeWatcher
 //
 //  Created by Simon Withington on 30/11/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  MapViewController.swift
 //  EarthquakeWatcher
 //
 //  Created by Simon Withington on 30/11/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
