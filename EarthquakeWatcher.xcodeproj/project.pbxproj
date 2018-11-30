@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1DAD020C21B1453A00B334D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020B21B1453A00B334D0 /* AppDelegate.swift */; };
-		1DAD020E21B1453A00B334D0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020D21B1453A00B334D0 /* FirstViewController.swift */; };
-		1DAD021021B1453A00B334D0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020F21B1453A00B334D0 /* SecondViewController.swift */; };
+		1DAD020E21B1453A00B334D0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020D21B1453A00B334D0 /* MapViewController.swift */; };
+		1DAD021021B1453A00B334D0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020F21B1453A00B334D0 /* ListViewController.swift */; };
 		1DAD021321B1453A00B334D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD021121B1453A00B334D0 /* Main.storyboard */; };
 		1DAD021521B1453C00B334D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD021421B1453C00B334D0 /* Assets.xcassets */; };
 		1DAD021821B1453C00B334D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAD021621B1453C00B334D0 /* LaunchScreen.storyboard */; };
@@ -32,8 +32,8 @@
 /* Begin PBXFileReference section */
 		1DAD020821B1453A00B334D0 /* EarthquakeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthquakeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DAD020B21B1453A00B334D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1DAD020D21B1453A00B334D0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		1DAD020F21B1453A00B334D0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		1DAD020D21B1453A00B334D0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1DAD020F21B1453A00B334D0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		1DAD021221B1453A00B334D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DAD021421B1453C00B334D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DAD021721B1453C00B334D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 				1DAD023221B1486A00B334D0 /* Clients */,
 				1DAD023121B1486100B334D0 /* Managers */,
 				1DAD022E21B147DF00B334D0 /* App */,
-				1DAD022F21B1480900B334D0 /* ViewModels */,
 				1DAD022D21B147C000B334D0 /* ViewControllers */,
+				1DAD022F21B1480900B334D0 /* ViewModels */,
 				1DAD023321B14A1F00B334D0 /* Storyboards */,
 				1DAD023021B1481500B334D0 /* Models */,
 			);
@@ -115,8 +115,8 @@
 		1DAD022D21B147C000B334D0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1DAD020D21B1453A00B334D0 /* FirstViewController.swift */,
-				1DAD020F21B1453A00B334D0 /* SecondViewController.swift */,
+				1DAD020D21B1453A00B334D0 /* MapViewController.swift */,
+				1DAD020F21B1453A00B334D0 /* ListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -346,9 +346,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DAE809121B150BE00402655 /* Constants.swift in Sources */,
-				1DAD021021B1453A00B334D0 /* SecondViewController.swift in Sources */,
+				1DAD021021B1453A00B334D0 /* ListViewController.swift in Sources */,
 				1DAD020C21B1453A00B334D0 /* AppDelegate.swift in Sources */,
-				1DAD020E21B1453A00B334D0 /* FirstViewController.swift in Sources */,
+				1DAD020E21B1453A00B334D0 /* MapViewController.swift in Sources */,
 				1DAE808D21B14F0500402655 /* GoogleMapsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
