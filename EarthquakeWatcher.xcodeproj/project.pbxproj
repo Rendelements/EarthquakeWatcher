@@ -84,9 +84,8 @@
 				1DAD022E21B147DF00B334D0 /* App */,
 				1DAD022F21B1480900B334D0 /* ViewModels */,
 				1DAD022D21B147C000B334D0 /* ViewControllers */,
+				1DAD023321B14A1F00B334D0 /* Storyboards */,
 				1DAD023021B1481500B334D0 /* Models */,
-				1DAD021121B1453A00B334D0 /* Main.storyboard */,
-				1DAD021621B1453C00B334D0 /* LaunchScreen.storyboard */,
 				1DAD021921B1453C00B334D0 /* Info.plist */,
 			);
 			path = EarthquakeWatcher;
@@ -145,6 +144,15 @@
 			children = (
 			);
 			path = Clients;
+			sourceTree = "<group>";
+		};
+		1DAD023321B14A1F00B334D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1DAD021121B1453A00B334D0 /* Main.storyboard */,
+				1DAD021621B1453C00B334D0 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
