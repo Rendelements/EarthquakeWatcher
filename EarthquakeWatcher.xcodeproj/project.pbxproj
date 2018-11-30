@@ -79,11 +79,13 @@
 		1DAD020A21B1453A00B334D0 /* EarthquakeWatcher */ = {
 			isa = PBXGroup;
 			children = (
-				1DAD020B21B1453A00B334D0 /* AppDelegate.swift */,
-				1DAD020D21B1453A00B334D0 /* FirstViewController.swift */,
-				1DAD020F21B1453A00B334D0 /* SecondViewController.swift */,
+				1DAD023221B1486A00B334D0 /* Clients */,
+				1DAD023121B1486100B334D0 /* Managers */,
+				1DAD022E21B147DF00B334D0 /* App */,
+				1DAD022F21B1480900B334D0 /* ViewModels */,
+				1DAD022D21B147C000B334D0 /* ViewControllers */,
+				1DAD023021B1481500B334D0 /* Models */,
 				1DAD021121B1453A00B334D0 /* Main.storyboard */,
-				1DAD021421B1453C00B334D0 /* Assets.xcassets */,
 				1DAD021621B1453C00B334D0 /* LaunchScreen.storyboard */,
 				1DAD021921B1453C00B334D0 /* Info.plist */,
 			);
@@ -97,6 +99,52 @@
 				1DAD022421B1453C00B334D0 /* Info.plist */,
 			);
 			path = EarthquakeWatcherTests;
+			sourceTree = "<group>";
+		};
+		1DAD022D21B147C000B334D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1DAD020D21B1453A00B334D0 /* FirstViewController.swift */,
+				1DAD020F21B1453A00B334D0 /* SecondViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1DAD022E21B147DF00B334D0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1DAD020B21B1453A00B334D0 /* AppDelegate.swift */,
+				1DAD021421B1453C00B334D0 /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1DAD022F21B1480900B334D0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1DAD023021B1481500B334D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1DAD023121B1486100B334D0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		1DAD023221B1486A00B334D0 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
