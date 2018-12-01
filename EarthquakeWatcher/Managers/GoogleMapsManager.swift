@@ -21,7 +21,6 @@ final class GoogleMapsManager {
             let apiKey = dict[plistApiKey] as? String {
             
             GMSServices.provideAPIKey(apiKey)
-            GMSPlacesClient.provideAPIKey(apiKey)
         }
     }
 }
