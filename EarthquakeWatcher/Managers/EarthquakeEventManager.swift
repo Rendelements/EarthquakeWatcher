@@ -12,6 +12,8 @@ import Foundation
 
 protocol EarthquakeEventManager {
     
+    var cachedEarthquakeEvents: [EarthquakeEvent] { get }
+    
     func getAllPastDay(withCompletionHandler completion: @escaping (APIClientResponse, [EarthquakeEvent]) -> Void)
 }
 
@@ -19,7 +21,7 @@ class LocalEarthquakeEventManager: EarthquakeEventManager {
     
     static let shared = LocalEarthquakeEventManager()
     
-    private var cachedEarthquakeEvents: [EarthquakeEvent] = []
+    var cachedEarthquakeEvents: [EarthquakeEvent] = []
     private let apiClient: APIClient
     
     init(apiClient: APIClient = APIClient()) {
@@ -37,7 +39,7 @@ class LocalEarthquakeEventManager: EarthquakeEventManager {
                 return
             }
             
-            let earthquakeEvents = features.map { EarthquakeEvent(model: $0) }
+            let earthquakeEvents = features.map{ EarthquakeEvent(model: $0) }.sorted{ $0.magnitude > $1.magnitude }
             self?.cachedEarthquakeEvents = earthquakeEvents
             
             completion(response, earthquakeEvents)

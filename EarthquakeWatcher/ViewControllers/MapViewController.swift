@@ -61,7 +61,7 @@ extension MapViewController: MapViewControllerDelegate {
                 
                 guard let coordinate = event.location,
                     let date = event.date else { continue }
-    
+                
                 bounds = bounds.includingCoordinate(coordinate)
                 self?.addMapAnnotation(forCoordinate: coordinate, date: date)
             }
