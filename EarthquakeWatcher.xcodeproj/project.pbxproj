@@ -20,6 +20,8 @@
 		1DAE809521B1552800402655 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAE809421B1552700402655 /* ListViewModel.swift */; };
 		1DAE809721B1F66800402655 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAE809621B1F66800402655 /* HTTPClient.swift */; };
 		1DAE809921B1F83100402655 /* EndpointConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAE809821B1F83100402655 /* EndpointConstants.swift */; };
+		1DAE809B21B202CA00402655 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAE809A21B202CA00402655 /* APIClient.swift */; };
+		1DAE809D21B20A5300402655 /* FeatureCollectionUSGS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAE809C21B20A5300402655 /* FeatureCollectionUSGS.swift */; };
 		5923A2BD756495A716A31F81 /* libPods-EarthquakeWatcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E95B5A11AE3A01E7115EC3FF /* libPods-EarthquakeWatcher.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		1DAE809421B1552700402655 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		1DAE809621B1F66800402655 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		1DAE809821B1F83100402655 /* EndpointConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConstants.swift; sourceTree = "<group>"; };
+		1DAE809A21B202CA00402655 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		1DAE809C21B20A5300402655 /* FeatureCollectionUSGS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCollectionUSGS.swift; sourceTree = "<group>"; };
 		58407B0B2B85F573FDECEAD0 /* Pods-EarthquakeWatcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthquakeWatcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EarthquakeWatcher/Pods-EarthquakeWatcher.debug.xcconfig"; sourceTree = "<group>"; };
 		A555E16E655526BA9BD9B65E /* Pods-EarthquakeWatcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EarthquakeWatcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-EarthquakeWatcher/Pods-EarthquakeWatcher.release.xcconfig"; sourceTree = "<group>"; };
 		E95B5A11AE3A01E7115EC3FF /* libPods-EarthquakeWatcher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EarthquakeWatcher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +154,7 @@
 		1DAD023021B1481500B334D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1DAE809C21B20A5300402655 /* FeatureCollectionUSGS.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				1DAE809621B1F66800402655 /* HTTPClient.swift */,
+				1DAE809A21B202CA00402655 /* APIClient.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -360,12 +366,14 @@
 				1DAE809121B150BE00402655 /* Constants.swift in Sources */,
 				1DAD021021B1453A00B334D0 /* ListViewController.swift in Sources */,
 				1DAE809721B1F66800402655 /* HTTPClient.swift in Sources */,
+				1DAE809B21B202CA00402655 /* APIClient.swift in Sources */,
 				1DAE809521B1552800402655 /* ListViewModel.swift in Sources */,
 				1DAE809921B1F83100402655 /* EndpointConstants.swift in Sources */,
 				1DAD020C21B1453A00B334D0 /* AppDelegate.swift in Sources */,
 				1DAD020E21B1453A00B334D0 /* MapViewController.swift in Sources */,
 				1DAE808D21B14F0500402655 /* GoogleMapsManager.swift in Sources */,
 				1DAE809321B154F800402655 /* MapViewModel.swift in Sources */,
+				1DAE809D21B20A5300402655 /* FeatureCollectionUSGS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
