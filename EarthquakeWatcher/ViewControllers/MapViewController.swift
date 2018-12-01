@@ -72,7 +72,7 @@ extension MapViewController: MapViewControllerDelegate {
                     let date = event.date else { continue }
                 
                 bounds = bounds.includingCoordinate(coordinate)
-                self?.addMapAnnotation(forCoordinate: coordinate, date: date)
+                self?.addMapAnnotation(forCoordinate: coordinate, date: date, magnitude: event.magnitude)
             }
             
             let cameraUpdate = GMSCameraUpdate.fit(bounds, withPadding: Constants.Mapping.cameraPadding)
@@ -83,7 +83,6 @@ extension MapViewController: MapViewControllerDelegate {
     func focusToAnnotationForEventIdx(_ idx: Int) {
         
         guard idx < allMarkers.count + 1 else { return }
-        
         let selectedMarker = allMarkers[idx]
         
         viewModel.resetFocusCoordinate()
@@ -96,11 +95,13 @@ extension MapViewController: MapViewControllerDelegate {
         }
     }
     
-    func addMapAnnotation(forCoordinate coordinate: CLLocationCoordinate2D, date: Date) {
+    func addMapAnnotation(forCoordinate coordinate: CLLocationCoordinate2D, 
+                          date: Date, magnitude: Double) {
+        
+        let magnitudeString = String(format: "%.1f", magnitude)
         
         let marker = GMSMarker(position: coordinate)
-        marker.snippet = "\(coordinate.prettyPrinted)\n\(date.full12HourString)"
-        marker.zIndex = 10
+        marker.snippet = "\(date.full12HourString), mag: \(magnitudeString)\n\(coordinate.prettyPrinted)"
         marker.map = gmsMapView
         allMarkers.append(marker)
     }

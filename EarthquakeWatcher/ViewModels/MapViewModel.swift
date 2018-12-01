@@ -28,7 +28,7 @@ class MapViewModel {
     
     func getAllEarthquakesPastDay() {
         
-        earthquakeEventManager.getAllPastDay { [weak self] (response, earthquakeEvents) in
+        earthquakeEventManager.getAllPastDayEvents { [weak self] (response, earthquakeEvents) in
             
             switch response {
             case .successful:

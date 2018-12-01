@@ -32,4 +32,9 @@ struct Constants {
         
         static let reuseIdentifier: String = "CELL"
     }
+    
+    struct Defaults {
+        
+        static let layoutRefreshDelay: Double = 0.25
+    }
 }

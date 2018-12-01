@@ -19,16 +19,41 @@ final class ListViewController: UIViewController {
     
     lazy var viewModel: ListViewModel = ListViewModel(delegate: self)
     
+    var listRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
+        add(refreshControl: listRefreshControl, to: tableView)
     }
 
     private func setupTableView() {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    }
+    
+    func add(refreshControl: UIRefreshControl, to scrollView: UIScrollView) {
+        
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: UIControl.Event.valueChanged)
+        scrollView.refreshControl = refreshControl
+    }
+    
+    func endRefreshControl() {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Defaults.layoutRefreshDelay, execute: { [weak self] in
+            
+            self?.tableView.reloadData()
+            self?.listRefreshControl.endRefreshing()
+        })
+    }
+    
+    @objc private func pullToRefresh() {
+        
+        viewModel.getAllPastDayEvents { [weak self] (response) in
+            self?.endRefreshControl()
+        }
     }
 }
 

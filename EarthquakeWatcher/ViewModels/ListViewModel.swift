@@ -49,8 +49,14 @@ class ListViewModel {
     }
     
     func setEventFocus(_ idx: Int) {
-        
         earthquakeEventManager.focusEventIdx = idx
+    }
+    
+    func getAllPastDayEvents(withCompletionHandler completion: @escaping (APIClientResponse) -> Void) {
+        
+        earthquakeEventManager.getAllPastDayEvents{ (response, _) in 
+            completion(response)
+        }
     }
     
     private func getEventAtIndex(_ idx: Int) -> EarthquakeEvent? {

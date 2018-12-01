@@ -16,7 +16,7 @@ protocol EarthquakeEventManager {
     var cachedEarthquakeEvents: [EarthquakeEvent] { get }
     var focusEventIdx: Int? { get set }
     
-    func getAllPastDay(withCompletionHandler completion: @escaping (APIClientResponse, [EarthquakeEvent]) -> Void)
+    func getAllPastDayEvents(withCompletionHandler completion: @escaping (APIClientResponse, [EarthquakeEvent]) -> Void)
 }
 
 class LocalEarthquakeEventManager: EarthquakeEventManager {
@@ -28,20 +28,11 @@ class LocalEarthquakeEventManager: EarthquakeEventManager {
     
     var focusEventIdx: Int?
     
-//    var focusEvent: EarthquakeEvent? {
-//        
-//        if let idx = focusEventIdx {
-//            return cachedEarthquakeEvents[idx]
-//        } else {
-//            return nil
-//        }
-//    }
-    
     init(apiClient: APIClient = APIClient()) {
         self.apiClient = apiClient
     }
     
-    func getAllPastDay(withCompletionHandler completion: @escaping (APIClientResponse, [EarthquakeEvent]) -> Void) {
+    func getAllPastDayEvents(withCompletionHandler completion: @escaping (APIClientResponse, [EarthquakeEvent]) -> Void) {
         
         apiClient.getAllEarthquakesPastDay { [weak self] (response, featureCollection) in
             
