@@ -13,6 +13,7 @@ import CoreLocation
 
 protocol EarthquakeEventManager {
     
+    var cacheUpated: Bool { get set }
     var cachedEarthquakeEvents: [EarthquakeEvent] { get }
     var focusEventIdx: Int? { get set }
     
@@ -22,6 +23,8 @@ protocol EarthquakeEventManager {
 class LocalEarthquakeEventManager: EarthquakeEventManager {
     
     static let shared = LocalEarthquakeEventManager()
+    
+    var cacheUpated: Bool = false
     
     var cachedEarthquakeEvents: [EarthquakeEvent] = []
     private let apiClient: APIClient
@@ -44,6 +47,7 @@ class LocalEarthquakeEventManager: EarthquakeEventManager {
             
             let earthquakeEvents = features.map{ EarthquakeEvent(model: $0) }.sorted{ $0.magnitude > $1.magnitude }
             self?.cachedEarthquakeEvents = earthquakeEvents
+            self?.cacheUpated = true
             
             completion(response, earthquakeEvents)
         }

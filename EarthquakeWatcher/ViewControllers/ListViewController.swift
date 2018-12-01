@@ -8,16 +8,11 @@
 
 import UIKit
 
-protocol ListViewControllerDelegate: class {
-    
-    
-}
-
 final class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    lazy var viewModel: ListViewModel = ListViewModel(delegate: self)
+    lazy var viewModel: ListViewModel = ListViewModel()
     
     var listRefreshControl = UIRefreshControl()
     
@@ -52,7 +47,23 @@ final class ListViewController: UIViewController {
     @objc private func pullToRefresh() {
         
         viewModel.getAllPastDayEvents { [weak self] (response) in
+            
             self?.endRefreshControl()
+            
+            switch response {
+            case .successful:
+                // Do nothing
+                break
+            case .decodeError:
+                // Error modal
+                break
+            case .successfulEmpty:
+                // Error modal
+                break
+            case .unkownError:
+                // Error modal
+                break
+            }
         }
     }
 }
@@ -79,9 +90,3 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         tabBarController?.selectedIndex = 0
     }
 }
-
-extension ListViewController: ListViewControllerDelegate {
-    
-    
-}
-

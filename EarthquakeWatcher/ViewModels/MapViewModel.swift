@@ -32,20 +32,30 @@ class MapViewModel {
             
             switch response {
             case .successful:
-                self?.viewDelegate?.plotAnnotationsForEarthquakeEvents(earthquakeEvents)
+                self?.viewDelegate?.plotAnnotationsForEarthquakeEvents(earthquakeEvents, completionHandler: {}) 
             case .decodeError:
-                
-                
+                // Error modal
                 break
             case .successfulEmpty:
-                
                 // Modal
                 break
             case .unkownError:
-                
-                
+                // Error modal
                 break
             }
+        }
+    }
+    
+    func checkEventCache(completionHandler completion: @escaping () -> Void) {
+        
+        if earthquakeEventManager.cacheUpated {
+            
+            earthquakeEventManager.cacheUpated = false
+            
+            viewDelegate?.plotAnnotationsForEarthquakeEvents(earthquakeEventManager.cachedEarthquakeEvents, 
+                                                             completionHandler: completion)
+        } else {
+            completion()
         }
     }
     

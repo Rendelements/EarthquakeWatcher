@@ -10,17 +10,14 @@ import Foundation
 
 class ListViewModel {
     
-    weak var viewDelegate: ListViewControllerDelegate?
     private var earthquakeEventManager: EarthquakeEventManager
     
     var eventCount: Int {
         return earthquakeEventManager.cachedEarthquakeEvents.count
     }
     
-    init(delegate: ListViewControllerDelegate,
-         earthquakeEventManager: EarthquakeEventManager = LocalEarthquakeEventManager.shared) {
+    init(earthquakeEventManager: EarthquakeEventManager = LocalEarthquakeEventManager.shared) {
         
-        self.viewDelegate = delegate
         self.earthquakeEventManager = earthquakeEventManager
     }
     

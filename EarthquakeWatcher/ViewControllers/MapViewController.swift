@@ -11,7 +11,7 @@ import GoogleMaps
 
 protocol MapViewControllerDelegate: class {
     
-    func plotAnnotationsForEarthquakeEvents(_ events: [EarthquakeEvent])
+    func plotAnnotationsForEarthquakeEvents(_ events: [EarthquakeEvent], completionHandler completion: @escaping () -> Void)
 }
 
 final class MapViewController: UIViewController {
@@ -36,8 +36,13 @@ final class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let focusEventIdx = viewModel.focusEventIdx {
-            focusToAnnotationForEventIdx(focusEventIdx)
+        viewModel.checkEventCache { [weak self] in
+            
+            guard let strongSelf = self else { return }
+            
+            if let focusEventIdx = strongSelf.viewModel.focusEventIdx {
+                strongSelf.focusToAnnotationForEventIdx(focusEventIdx)
+            }
         }
     }
     
@@ -60,9 +65,11 @@ extension MapViewController: GMSMapViewDelegate {
 
 extension MapViewController: MapViewControllerDelegate {
     
-    func plotAnnotationsForEarthquakeEvents(_ events: [EarthquakeEvent]) {
+    func plotAnnotationsForEarthquakeEvents(_ events: [EarthquakeEvent], completionHandler completion: @escaping () -> Void) {
         
         DispatchQueue.main.async { [weak self] in
+            
+            self?.clearMap()
             
             var bounds = GMSCoordinateBounds()
             
@@ -77,6 +84,7 @@ extension MapViewController: MapViewControllerDelegate {
             
             let cameraUpdate = GMSCameraUpdate.fit(bounds, withPadding: Constants.Mapping.cameraPadding)
             self?.gmsMapView?.animate(with: cameraUpdate)
+            completion()
         }
     }
     
