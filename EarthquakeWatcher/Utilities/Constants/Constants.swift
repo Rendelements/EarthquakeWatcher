@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 struct Constants {
     
@@ -20,5 +21,10 @@ struct Constants {
         static let iso8601Format = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
         static let iso8601FormatTruncated = "yyyy-MM-dd'T'HH:mm:'00.000'XXXXX"
         static let iso8601FormatTime = "HH:mm:ss"
+    }
+    
+    struct Mapping {
+        
+        static let cameraPadding: CGFloat = 50.0
     }
 }

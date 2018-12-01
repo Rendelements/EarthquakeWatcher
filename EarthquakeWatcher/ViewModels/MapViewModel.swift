@@ -13,7 +13,7 @@ class MapViewModel {
     weak var viewDelegate: MapViewControllerDelegate?
     
     private let earthquakeEventManager: EarthquakeEventManager
-    private var earthquakeEvents: [EarthquakeEvent] = []
+    var earthquakeEvents: [EarthquakeEvent] = []
     
     init(delegate: MapViewControllerDelegate,
         earthquakeEventManager: EarthquakeEventManager = LocalEarthquakeEventManager.shared) {
@@ -29,6 +29,7 @@ class MapViewModel {
             switch response {
             case .successful:
                 self?.earthquakeEvents = earthquakeEvents
+                self?.viewDelegate?.plotAnnotationsForEarthquakeEvents(earthquakeEvents)
             case .decodeError:
                 
                 
