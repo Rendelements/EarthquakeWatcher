@@ -27,4 +27,9 @@ struct Constants {
         
         static let cameraPadding: CGFloat = 50.0
     }
+    
+    struct ListCell {
+        
+        static let reuseIdentifier: String = "CELL"
+    }
 }

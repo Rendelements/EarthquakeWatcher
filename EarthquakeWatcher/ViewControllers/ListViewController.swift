@@ -40,7 +40,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ListCell.reuseIdentifier) ?? UITableViewCell(style: .subtitle, reuseIdentifier: Constants.ListCell.reuseIdentifier)
+        
         cell.textLabel?.text = viewModel.getEventTextHeadingAtIndex(indexPath.row)
         cell.detailTextLabel?.text = viewModel.getEventTextDetailsAtIndex(indexPath.row)
         return cell
