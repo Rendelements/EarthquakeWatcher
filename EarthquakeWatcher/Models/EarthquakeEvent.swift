@@ -19,8 +19,8 @@ class EarthquakeEvent {
     
     init(model: FeatureCollectionUSGS.Features) {
         
-        if let lat = model.geometry?.coordinates[0].locationDegrees,
-            let long = model.geometry?.coordinates[1].locationDegrees {
+        if let lat = model.geometry?.coordinates[0].degrees,
+            let long = model.geometry?.coordinates[1].degrees {
             self.location = CLLocationCoordinate2D(latitude: lat, longitude: long)
         }
         

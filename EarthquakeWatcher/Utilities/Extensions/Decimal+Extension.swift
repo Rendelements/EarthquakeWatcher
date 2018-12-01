@@ -11,7 +11,7 @@ import CoreLocation
 
 extension Decimal {
     
-    var locationDegrees: CLLocationDegrees {
+    var degrees: CLLocationDegrees {
         return CLLocationDegrees(self.doubleValue)
     }
     

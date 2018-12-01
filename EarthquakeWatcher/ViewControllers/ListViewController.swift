@@ -8,13 +8,27 @@
 
 import UIKit
 
-final class ListViewController: UIViewController {
+protocol ListViewControllerDelegate: class {
+    
+    
+}
 
+final class ListViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    lazy var viewModel: MapViewModel = ListViewModel(delegate: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
 
+}
+
+extension ListViewController: ListViewControllerDelegate {
+    
+    
 }
 

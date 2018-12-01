@@ -10,9 +10,14 @@ import Foundation
 
 class ListViewModel {
     
-    init() {
+    weak var viewDelegate: ListViewControllerDelegate?
+    
+    private let earthquakeEventManager: EarthquakeEventManager
+    
+    init(delegate: ListViewControllerDelegate,
+         earthquakeEventManager: EarthquakeEventManager = LocalEarthquakeEventManager.shared) {
         
-        
+        self.viewDelegate = delegate
+        self.earthquakeEventManager = earthquakeEventManager
     }    
 }
-
