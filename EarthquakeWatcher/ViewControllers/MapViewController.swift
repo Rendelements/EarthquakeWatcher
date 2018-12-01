@@ -89,11 +89,10 @@ extension MapViewController: MapViewControllerDelegate {
             
             for event in events {
                 
-                guard let coordinate = event.location,
-                    let date = event.date else { continue }
+                guard let coordinate = event.location else { continue }
                 
                 bounds = bounds.includingCoordinate(coordinate)
-                self?.addMapAnnotation(forCoordinate: coordinate, date: date, magnitude: event.magnitude)
+                self?.addMapAnnotation(forCoordinate: coordinate, date: event.date, magnitude: event.magnitude)
             }
             
             let cameraUpdate = GMSCameraUpdate.fit(bounds, withPadding: Constants.Mapping.cameraPadding)

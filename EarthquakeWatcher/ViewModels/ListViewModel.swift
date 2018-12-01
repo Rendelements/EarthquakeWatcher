@@ -23,13 +23,13 @@ class ListViewModel {
     
     func getEventTextHeadingAtIndex(_ idx: Int) -> String {
         
-        guard let event = getEventAtIndex(idx),
-            let eventTime = event.date?.full12HourString else {
+        guard let event = getEventAtIndex(idx) else {
             return ""
         }
         
         let id = idx + 1
         
+        let eventTime = event.date.full12HourString
         let magnitudeString = String(format: "%.1f", event.magnitude)
         
         return "\(id). \(eventTime) / magnitude: \(magnitudeString)"

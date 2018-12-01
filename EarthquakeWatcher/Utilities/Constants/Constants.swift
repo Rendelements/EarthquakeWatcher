@@ -37,5 +37,6 @@ struct Constants {
     struct Defaults {
         
         static let layoutRefreshDelay: Double = 0.25
+        static let milliseconds: TimeInterval = 0.001
     }
 }

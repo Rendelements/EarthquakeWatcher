@@ -10,6 +10,7 @@
 		1D26AE4C21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D26AE4B21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist */; };
 		1D26AE4F21B3325100022D08 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26AE4E21B3325100022D08 /* AlertFactory.swift */; };
 		1D26AE5121B335B400022D08 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26AE5021B335B400022D08 /* AlertManager.swift */; };
+		1D26AE5321B33DE600022D08 /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26AE5221B33DE600022D08 /* MapViewModelTests.swift */; };
 		1DAD020C21B1453A00B334D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020B21B1453A00B334D0 /* AppDelegate.swift */; };
 		1DAD020E21B1453A00B334D0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020D21B1453A00B334D0 /* MapViewController.swift */; };
 		1DAD021021B1453A00B334D0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020F21B1453A00B334D0 /* ListViewController.swift */; };
@@ -49,6 +50,7 @@
 		1D26AE4B21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EarthquakeWatcherGoogleInfo.plist; sourceTree = "<group>"; };
 		1D26AE4E21B3325100022D08 /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		1D26AE5021B335B400022D08 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		1D26AE5221B33DE600022D08 /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
 		1DAD020821B1453A00B334D0 /* EarthquakeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthquakeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DAD020B21B1453A00B334D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DAD020D21B1453A00B334D0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				1DAD022221B1453C00B334D0 /* EarthquakeWatcherTests.swift */,
 				1DAD022421B1453C00B334D0 /* Info.plist */,
+				1D26AE5221B33DE600022D08 /* MapViewModelTests.swift */,
 			);
 			path = EarthquakeWatcherTests;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DAD022321B1453C00B334D0 /* EarthquakeWatcherTests.swift in Sources */,
+				1D26AE5321B33DE600022D08 /* MapViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,14 +9,12 @@
 import Foundation
 import CoreLocation
 
-class EarthquakeEvent {
+struct EarthquakeEvent {
     
     var location: CLLocationCoordinate2D?
-    var date: Date?
+    var date: Date
     var id: String?
     var magnitude: Double
-    
-    private let milliseconds = 0.001
     
     init(model: FeatureCollectionUSGS.Features) {
         
@@ -26,7 +24,9 @@ class EarthquakeEvent {
         }
         
         if let time = model.properties?.time {
-            self.date = Date(timeIntervalSince1970: TimeInterval(time) * milliseconds)
+            self.date = Date(timeIntervalSince1970: TimeInterval(time) * Constants.Defaults.milliseconds)
+        } else {
+            self.date = Date(timeIntervalSince1970: 0)
         }
         
         self.id = model.id
@@ -36,5 +36,13 @@ class EarthquakeEvent {
         } else {
             self.magnitude = 0.0 
         }
+    }
+    
+    init(location: CLLocationCoordinate2D?, date: Date, id: String?, magnitude: Double) {
+        
+        self.location = location
+        self.date = date
+        self.id = id
+        self.magnitude = magnitude
     }
 }
