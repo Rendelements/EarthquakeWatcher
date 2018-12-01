@@ -25,11 +25,10 @@ class LocalEarthquakeEventManager: EarthquakeEventManager {
     static let shared = LocalEarthquakeEventManager()
     
     var cacheUpated: Bool = false
+    var focusEventIdx: Int?
     
     var cachedEarthquakeEvents: [EarthquakeEvent] = []
     private let apiClient: APIClient
-    
-    var focusEventIdx: Int?
     
     init(apiClient: APIClient = APIClient()) {
         self.apiClient = apiClient
