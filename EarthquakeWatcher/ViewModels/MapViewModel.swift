@@ -28,15 +28,15 @@ class MapViewModel {
             
             switch response {
             case .successful:
-                
-                
-                break
+                self?.earthquakeEvents = earthquakeEvents
             case .decodeError:
                 
                 
                 break
             case .successfulEmpty:
                 self?.earthquakeEvents.removeAll()
+                
+                // Modal
                 break
             case .unkownError:
                 

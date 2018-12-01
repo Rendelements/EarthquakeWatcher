@@ -14,4 +14,11 @@ struct Constants {
         
         static let infoPlistName: String = "Info"
     }
+    
+    struct Date {
+        
+        static let iso8601Format = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+        static let iso8601FormatTruncated = "yyyy-MM-dd'T'HH:mm:'00.000'XXXXX"
+        static let iso8601FormatTime = "HH:mm:ss"
+    }
 }
