@@ -36,9 +36,7 @@ final class MapViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if let focusCoordinate = viewModel.focusCoordinate {
-            
             focusToAnnotationLocation(focusCoordinate)
-            viewModel.resetFocusCoordinate()
         }
     }
     
@@ -82,6 +80,8 @@ extension MapViewController: MapViewControllerDelegate {
     }
     
     func focusToAnnotationLocation(_ coordinate: CLLocationCoordinate2D) {
+        
+        viewModel.resetFocusCoordinate()
         
         DispatchQueue.main.async { [weak self] in
             
