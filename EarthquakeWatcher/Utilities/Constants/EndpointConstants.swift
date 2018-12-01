@@ -12,10 +12,10 @@ struct EndpointConstant {
     
     enum EarthquakeTimeWindow: String {
         
-        case allDay
+        case allDay = "all_day"
         
         var path: String {
-            return "\\/\(self.rawValue).geojson"
+            return "/\(self.rawValue).geojson"
         }
     }
 
@@ -34,7 +34,6 @@ struct EndpointConstant {
         static let feed: String = "/feed"
         static let version: String = "/v1.0"
         static let summary: String = "/summary"
-        static let allDay: String = "/all_day.geojson"
     }
     
     static func getEarthquakePathForTimeWindow(_ timeWindow: EarthquakeTimeWindow) -> String {

@@ -9,7 +9,13 @@
 import UIKit
 import GoogleMaps
 
-final class MapViewController: UIViewController {
+protocol MapViewControllerDelegate: class {
+    
+}
+
+final class MapViewController: UIViewController, MapViewControllerDelegate {
+    
+    lazy var viewModel: MapViewModel = MapViewModel(delegate: self)
     
     var gmsMapView: GMSMapView? // Convenience
     
@@ -22,6 +28,7 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.getAllEarthquakesPastDay()
     }
     
     private func makeMapView() {

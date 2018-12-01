@@ -29,7 +29,7 @@ class APIClient {
 
 extension APIClient {
     
-    func getAllDayFeatureCollection(withCompletionHandler completion: @escaping (APIClientResponse, FeatureCollectionUSGS?) -> Void) {
+    func getAllEarthquakesPastDay(withCompletionHandler completion: @escaping (APIClientResponse, FeatureCollectionUSGS?) -> Void) {
         
         let requestURL = EndpointConstant.getEarthquakePathForTimeWindow(.allDay)
         
