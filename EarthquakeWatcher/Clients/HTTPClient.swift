@@ -23,7 +23,6 @@ class HTTPClient {
     init(urlSession: URLSession? = nil) {
         
         if let urlSession = urlSession {
-            
             self.session = urlSession
             return
         }
@@ -33,10 +32,14 @@ class HTTPClient {
         
         self.session = URLSession(configuration: config)
     }
+}
+
+extension HTTPClient {
     
-    func getRequest(urlRequest: String, 
-                    header requestHeader: Dictionary<String, String>?, 
-                    body: Dictionary<String, String>?, 
+    // NOTE: This is very basic GET request, we can have a special error handler as a param, maybe in future...
+    
+    func getRequest(_ urlRequest: String, 
+                    withHeader requestHeader: Dictionary<String, String>? = nil,
                     completetionHandler: @escaping (_ requestWasSuccessful: Bool, _ requestStatusCode: Int?, _ requestData: Data?) -> Void) {
         
         guard let url = URL(string: urlRequest) else { 
@@ -47,13 +50,14 @@ class HTTPClient {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.GET.rawValue
         
-//        var headers = EndpointConstant.appHeader()
-//        requestHeader?.forEach { headers[$0] = $1 }
-//        request.allHTTPHeaderFields = headers
+        if let requestHeader = requestHeader {
+            
+            var headers = [String: String]()
+            requestHeader.forEach { headers[$0] = $1 }
+            request.allHTTPHeaderFields = headers
+        }
         
         let task = session.dataTask(with: request) { (data, response, error) in
-            
-            print("Task completeted")
             
             if error != nil {
                 completetionHandler(false, nil, nil)

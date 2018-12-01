@@ -37,7 +37,7 @@ struct EndpointConstant {
         static let allDay: String = "/all_day.geojson"
     }
     
-    func getEarthquakePathForTimeWindow(_ timeWindow: EarthquakeTimeWindow) -> String {
+    static func getEarthquakePathForTimeWindow(_ timeWindow: EarthquakeTimeWindow) -> String {
         
         var address: String = USGS.base
         address += Earthquakes.earthquakes
