@@ -9,12 +9,13 @@ Build and install on your favourite iOS device
 ### Prerequisites
 
 ```
-Xcode 10.0
+Xcode 10.1
+iOS 12.1
 ```
 
 ### Installing
 
-You will need to add a Google Maps API key to the file EarthquakeWatcherGoogleInfo.plist
+You will need to add a Google Maps API key to the file EarthquakeWatcherGoogleInfo.plist\n
 After pulling GIT repo, open using Xcode, and hit build...
 ```
 Command - B
