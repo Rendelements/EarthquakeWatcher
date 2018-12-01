@@ -9,6 +9,8 @@
 import Foundation
 
 import XCTest
+import CoreLocation
+
 @testable import EarthquakeWatcher
 
 class MapViewModelTests: XCTestCase {
@@ -30,15 +32,34 @@ class MapViewModelTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+        mapViewModel = nil
+        
+        earthquakeEventManagerMock = nil
+        mapViewDelegateMock = nil
+        
+        super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGetAllEarthquakesPastDay() {
+        
+        let closureExpectation = expectation(description: "Closure succeeds and returns")
+        
+        mapViewModel.getAllEarthquakesPastDay(withCompletionHandler: { (response, events) in
+            
+            XCTAssertTrue(response == .successful)
+            XCTAssertTrue(events.count == 2)
+            
+            closureExpectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 1) { error in
+            
+            if let error = error {
+                XCTFail("waitForExpectations errored: \(error)")
+            }
+        }
     }
-
-    
 }
 
 fileprivate class MapViewDelegateMock: MapViewControllerDelegate {
@@ -63,6 +84,7 @@ fileprivate class EarthquakeEventManagerMock: EarthquakeEventManager {
     
     init() {
         
-//        cachedEarthquakeEvents = [EarthquakeEvent()]
+        cachedEarthquakeEvents = [EarthquakeEvent(location: CLLocationCoordinate2D(), date: Date(), id: "", magnitude: 1.0),
+                                  EarthquakeEvent(location: CLLocationCoordinate2D(), date: Date(), id: "", magnitude: 2.0)]
     }
 }
