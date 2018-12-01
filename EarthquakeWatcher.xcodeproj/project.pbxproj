@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D26AE4C21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D26AE4B21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist */; };
+		1D26AE4F21B3325100022D08 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26AE4E21B3325100022D08 /* AlertFactory.swift */; };
+		1D26AE5121B335B400022D08 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26AE5021B335B400022D08 /* AlertManager.swift */; };
 		1DAD020C21B1453A00B334D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020B21B1453A00B334D0 /* AppDelegate.swift */; };
 		1DAD020E21B1453A00B334D0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020D21B1453A00B334D0 /* MapViewController.swift */; };
 		1DAD021021B1453A00B334D0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020F21B1453A00B334D0 /* ListViewController.swift */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		1D26AE4B21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EarthquakeWatcherGoogleInfo.plist; sourceTree = "<group>"; };
+		1D26AE4E21B3325100022D08 /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
+		1D26AE5021B335B400022D08 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		1DAD020821B1453A00B334D0 /* EarthquakeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthquakeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DAD020B21B1453A00B334D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DAD020D21B1453A00B334D0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D26AE4D21B3323700022D08 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				1D26AE4E21B3325100022D08 /* AlertFactory.swift */,
+				1D26AE5021B335B400022D08 /* AlertManager.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		1DAD01FF21B1453A00B334D0 = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 		1DAE808E21B1509E00402655 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1D26AE4D21B3323700022D08 /* Alert */,
 				1DAE80A221B22F7900402655 /* Extensions */,
 				1DAE808F21B150AD00402655 /* Constants */,
 			);
@@ -406,7 +420,9 @@
 				1DAE809B21B202CA00402655 /* APIClient.swift in Sources */,
 				1DAE809521B1552800402655 /* ListViewModel.swift in Sources */,
 				1DAE809921B1F83100402655 /* EndpointConstants.swift in Sources */,
+				1D26AE4F21B3325100022D08 /* AlertFactory.swift in Sources */,
 				1DAD020C21B1453A00B334D0 /* AppDelegate.swift in Sources */,
+				1D26AE5121B335B400022D08 /* AlertManager.swift in Sources */,
 				1DAE80A421B22F9A00402655 /* Decimal+Extension.swift in Sources */,
 				1DAD020E21B1453A00B334D0 /* MapViewController.swift in Sources */,
 				1DAE808D21B14F0500402655 /* GoogleMapsManager.swift in Sources */,

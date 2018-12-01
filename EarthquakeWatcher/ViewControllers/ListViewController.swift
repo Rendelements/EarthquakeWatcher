@@ -13,6 +13,7 @@ final class ListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     lazy var viewModel: ListViewModel = ListViewModel()
+    lazy var alertManager: AlertManager = AlertManager(delegate: self)
     
     var listRefreshControl = UIRefreshControl()
     
@@ -55,17 +56,15 @@ final class ListViewController: UIViewController {
                 // Do nothing
                 break
             case .decodeError:
-                // Error modal
-                break
+                self?.alertManager.presentDecodeError()
             case .successfulEmpty:
-                // Error modal
-                break
+                self?.alertManager.presentEmptyError()
             case .unkownError:
-                // Error modal
-                break
+                self?.alertManager.presentUnknownError()
             }
         }
     }
+     
 }
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {

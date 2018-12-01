@@ -26,24 +26,8 @@ class MapViewModel {
         self.earthquakeEventManager = earthquakeEventManager
     }
     
-    func getAllEarthquakesPastDay() {
-        
-        earthquakeEventManager.getAllPastDayEvents { [weak self] (response, earthquakeEvents) in
-            
-            switch response {
-            case .successful:
-                self?.viewDelegate?.plotAnnotationsForEarthquakeEvents(earthquakeEvents, completionHandler: {}) 
-            case .decodeError:
-                // Error modal
-                break
-            case .successfulEmpty:
-                // Modal
-                break
-            case .unkownError:
-                // Error modal
-                break
-            }
-        }
+    func getAllEarthquakesPastDay(withCompletionHandler completion: @escaping (APIClientResponse, [EarthquakeEvent]) -> Void) {
+        earthquakeEventManager.getAllPastDayEvents(withCompletionHandler: completion)
     }
     
     func checkEventCache(completionHandler completion: @escaping () -> Void) {

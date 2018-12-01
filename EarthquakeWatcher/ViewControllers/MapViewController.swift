@@ -17,6 +17,7 @@ protocol MapViewControllerDelegate: class {
 final class MapViewController: UIViewController {
     
     lazy var viewModel: MapViewModel = MapViewModel(delegate: self)
+    lazy var alertManager: AlertManager = AlertManager(delegate: self)
     
     var allMarkers: [GMSMarker] = []
     var gmsMapView: GMSMapView? // Convenience
@@ -30,7 +31,7 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.getAllEarthquakesPastDay()
+        getAllEarthquakesPastDay()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,18 +50,31 @@ final class MapViewController: UIViewController {
     private func makeMapView() {
         
         let gmsMapView = GMSMapView(frame: self.view.bounds)
-        gmsMapView.delegate = self
-        gmsMapView.isMyLocationEnabled = true
-        gmsMapView.settings.myLocationButton = true
+        
+        // Not needed, but could be used in future determine for example how far away from an earthquake a user is...
+//        gmsMapView.isMyLocationEnabled = true
+//        gmsMapView.settings.myLocationButton = true
         
         self.view = gmsMapView
         self.gmsMapView = gmsMapView
     }
-}
-
-extension MapViewController: GMSMapViewDelegate {
     
-    
+    private func getAllEarthquakesPastDay() {
+        
+        viewModel.getAllEarthquakesPastDay { [weak self] (response, earthquakeEvents) in
+            
+            switch response {
+            case .successful:
+                self?.plotAnnotationsForEarthquakeEvents(earthquakeEvents, completionHandler: {}) 
+            case .decodeError:
+                self?.alertManager.presentDecodeError()
+            case .successfulEmpty:
+                self?.alertManager.presentEmptyError()
+            case .unkownError:
+                self?.alertManager.presentUnknownError()
+            }
+        }
+    }
 }
 
 extension MapViewController: MapViewControllerDelegate {
@@ -109,6 +123,7 @@ extension MapViewController: MapViewControllerDelegate {
         let magnitudeString = String(format: "%.1f", magnitude)
         
         let marker = GMSMarker(position: coordinate)
+        // TODO colour code the annotation to magnitude
         marker.snippet = "\(date.full12HourString), mag: \(magnitudeString)\n\(coordinate.prettyPrinted)"
         marker.map = gmsMapView
         allMarkers.append(marker)
