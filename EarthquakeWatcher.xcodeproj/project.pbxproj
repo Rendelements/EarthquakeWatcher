@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D26AE4C21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D26AE4B21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist */; };
 		1DAD020C21B1453A00B334D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020B21B1453A00B334D0 /* AppDelegate.swift */; };
 		1DAD020E21B1453A00B334D0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020D21B1453A00B334D0 /* MapViewController.swift */; };
 		1DAD021021B1453A00B334D0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD020F21B1453A00B334D0 /* ListViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D26AE4B21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EarthquakeWatcherGoogleInfo.plist; sourceTree = "<group>"; };
 		1DAD020821B1453A00B334D0 /* EarthquakeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthquakeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DAD020B21B1453A00B334D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DAD020D21B1453A00B334D0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				1DAD021921B1453C00B334D0 /* Info.plist */,
+				1D26AE4B21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist */,
 				1DAD022D21B147C000B334D0 /* ViewControllers */,
 				1DAD022F21B1480900B334D0 /* ViewModels */,
 				1DAD023221B1486A00B334D0 /* Clients */,
@@ -334,6 +337,7 @@
 				1DAD021821B1453C00B334D0 /* LaunchScreen.storyboard in Resources */,
 				1DAD021521B1453C00B334D0 /* Assets.xcassets in Resources */,
 				1DAD021321B1453A00B334D0 /* Main.storyboard in Resources */,
+				1D26AE4C21B3272400022D08 /* EarthquakeWatcherGoogleInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

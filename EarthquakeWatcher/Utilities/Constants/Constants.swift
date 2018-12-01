@@ -14,6 +14,7 @@ struct Constants {
     struct General {
         
         static let infoPlistName: String = "Info"
+        static let googlePlistName: String = "EarthquakeWatcherGoogleInfo"
     }
     
     struct Date {
