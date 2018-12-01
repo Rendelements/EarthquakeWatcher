@@ -15,7 +15,6 @@ protocol EarthquakeEventManager {
     
     var cachedEarthquakeEvents: [EarthquakeEvent] { get }
     var focusEventIdx: Int? { get set }
-    var focusCoordinate: CLLocationCoordinate2D? { get }
     
     func getAllPastDay(withCompletionHandler completion: @escaping (APIClientResponse, [EarthquakeEvent]) -> Void)
 }
@@ -29,14 +28,14 @@ class LocalEarthquakeEventManager: EarthquakeEventManager {
     
     var focusEventIdx: Int?
     
-    var focusCoordinate: CLLocationCoordinate2D? {
-        
-        if let idx = focusEventIdx {
-            return cachedEarthquakeEvents[idx].location
-        } else {
-            return nil
-        }
-    }
+//    var focusEvent: EarthquakeEvent? {
+//        
+//        if let idx = focusEventIdx {
+//            return cachedEarthquakeEvents[idx]
+//        } else {
+//            return nil
+//        }
+//    }
     
     init(apiClient: APIClient = APIClient()) {
         self.apiClient = apiClient

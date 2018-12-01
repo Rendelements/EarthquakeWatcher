@@ -18,6 +18,7 @@ final class MapViewController: UIViewController {
     
     lazy var viewModel: MapViewModel = MapViewModel(delegate: self)
     
+    var allMarkers: [GMSMarker] = []
     var gmsMapView: GMSMapView? // Convenience
     
     override func loadView() {
@@ -35,8 +36,8 @@ final class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let focusCoordinate = viewModel.focusCoordinate {
-            focusToAnnotationLocation(focusCoordinate)
+        if let focusEventIdx = viewModel.focusEventIdx {
+            focusToAnnotationForEventIdx(focusEventIdx)
         }
     }
     
@@ -79,13 +80,18 @@ extension MapViewController: MapViewControllerDelegate {
         }
     }
     
-    func focusToAnnotationLocation(_ coordinate: CLLocationCoordinate2D) {
+    func focusToAnnotationForEventIdx(_ idx: Int) {
+        
+        guard idx < allMarkers.count + 1 else { return }
+        
+        let selectedMarker = allMarkers[idx]
         
         viewModel.resetFocusCoordinate()
         
         DispatchQueue.main.async { [weak self] in
             
-            let cameraUpdate = GMSCameraUpdate.setTarget(coordinate, zoom: 12)
+            let cameraUpdate = GMSCameraUpdate.setTarget(selectedMarker.position, zoom: 12)
+            self?.gmsMapView?.selectedMarker = selectedMarker
             self?.gmsMapView?.animate(with: cameraUpdate)
         }
     }
@@ -96,9 +102,12 @@ extension MapViewController: MapViewControllerDelegate {
         marker.snippet = "\(coordinate.prettyPrinted)\n\(date.full12HourString)"
         marker.zIndex = 10
         marker.map = gmsMapView
+        allMarkers.append(marker)
     }
     
     func clearMap() {
+        
+        allMarkers.removeAll()
         gmsMapView?.clear()
     }
 }

@@ -15,8 +15,8 @@ class MapViewModel {
     
     private var earthquakeEventManager: EarthquakeEventManager
     
-    var focusCoordinate: CLLocationCoordinate2D? {
-        return earthquakeEventManager.focusCoordinate
+    var focusEventIdx: Int? {
+        return earthquakeEventManager.focusEventIdx
     }
     
     init(delegate: MapViewControllerDelegate,
