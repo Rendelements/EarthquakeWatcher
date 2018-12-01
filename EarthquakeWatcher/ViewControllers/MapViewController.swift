@@ -59,10 +59,11 @@ extension MapViewController: MapViewControllerDelegate {
             
             for event in events {
                 
-                guard let coordinate = event.location else { continue }
+                guard let coordinate = event.location,
+                    let date = event.date else { continue }
     
                 bounds = bounds.includingCoordinate(coordinate)
-                self?.addMapAnnotationForCoordinate(coordinate)
+                self?.addMapAnnotation(forCoordinate: coordinate, date: date)
             }
             
             let cameraUpdate = GMSCameraUpdate.fit(bounds, withPadding: Constants.Mapping.cameraPadding)
@@ -70,9 +71,10 @@ extension MapViewController: MapViewControllerDelegate {
         }
     }
     
-    func addMapAnnotationForCoordinate(_ coordinate: CLLocationCoordinate2D) {
+    func addMapAnnotation(forCoordinate coordinate: CLLocationCoordinate2D, date: Date) {
         
         let marker = GMSMarker(position: coordinate)
+        marker.snippet = "\(coordinate.prettyPrinted)\n\(date.full12HourString)"
         marker.map = self.gmsMapView
     }
     
