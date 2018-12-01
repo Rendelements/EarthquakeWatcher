@@ -11,7 +11,7 @@ import Foundation
 class ListViewModel {
     
     weak var viewDelegate: ListViewControllerDelegate?
-    private let earthquakeEventManager: EarthquakeEventManager
+    private var earthquakeEventManager: EarthquakeEventManager
     
     var eventCount: Int {
         return earthquakeEventManager.cachedEarthquakeEvents.count
@@ -46,6 +46,11 @@ class ListViewModel {
         }
         
         return "\(eventLocation)"
+    }
+    
+    func setEventFocus(_ idx: Int) {
+        
+        earthquakeEventManager.focusEventIdx = idx
     }
     
     private func getEventAtIndex(_ idx: Int) -> EarthquakeEvent? {

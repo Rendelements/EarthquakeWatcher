@@ -7,12 +7,17 @@
 //
 
 import Foundation
+import CoreLocation
 
 class MapViewModel {
     
     weak var viewDelegate: MapViewControllerDelegate?
     
-    private let earthquakeEventManager: EarthquakeEventManager
+    private var earthquakeEventManager: EarthquakeEventManager
+    
+    var focusCoordinate: CLLocationCoordinate2D? {
+        return earthquakeEventManager.focusCoordinate
+    }
     
     init(delegate: MapViewControllerDelegate,
         earthquakeEventManager: EarthquakeEventManager = LocalEarthquakeEventManager.shared) {
@@ -42,5 +47,9 @@ class MapViewModel {
                 break
             }
         }
+    }
+    
+    func resetFocusCoordinate() {
+        earthquakeEventManager.focusEventIdx = nil
     }
 }

@@ -40,11 +40,18 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ListCell.reuseIdentifier) ?? UITableViewCell(style: .subtitle, reuseIdentifier: Constants.ListCell.reuseIdentifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ListCell.reuseIdentifier) 
+            ?? UITableViewCell(style: .subtitle, reuseIdentifier: Constants.ListCell.reuseIdentifier)
         
         cell.textLabel?.text = viewModel.getEventTextHeadingAtIndex(indexPath.row)
         cell.detailTextLabel?.text = viewModel.getEventTextDetailsAtIndex(indexPath.row)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        viewModel.setEventFocus(indexPath.row)
+        tabBarController?.selectedIndex = 0
     }
 }
 

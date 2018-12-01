@@ -32,6 +32,16 @@ final class MapViewController: UIViewController {
         viewModel.getAllEarthquakesPastDay()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let focusCoordinate = viewModel.focusCoordinate {
+            
+            focusToAnnotationLocation(focusCoordinate)
+            viewModel.resetFocusCoordinate()
+        }
+    }
+    
     private func makeMapView() {
         
         let gmsMapView = GMSMapView(frame: self.view.bounds)
@@ -71,11 +81,21 @@ extension MapViewController: MapViewControllerDelegate {
         }
     }
     
+    func focusToAnnotationLocation(_ coordinate: CLLocationCoordinate2D) {
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            let cameraUpdate = GMSCameraUpdate.setTarget(coordinate, zoom: 12)
+            self?.gmsMapView?.animate(with: cameraUpdate)
+        }
+    }
+    
     func addMapAnnotation(forCoordinate coordinate: CLLocationCoordinate2D, date: Date) {
         
         let marker = GMSMarker(position: coordinate)
         marker.snippet = "\(coordinate.prettyPrinted)\n\(date.full12HourString)"
-        marker.map = self.gmsMapView
+        marker.zIndex = 10
+        marker.map = gmsMapView
     }
     
     func clearMap() {

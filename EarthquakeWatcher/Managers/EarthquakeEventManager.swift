@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import CoreLocation
 
 // NOTE: This is designed as a single source of truth for the earthquake events in the App
 
 protocol EarthquakeEventManager {
     
     var cachedEarthquakeEvents: [EarthquakeEvent] { get }
+    var focusEventIdx: Int? { get set }
+    var focusCoordinate: CLLocationCoordinate2D? { get }
     
     func getAllPastDay(withCompletionHandler completion: @escaping (APIClientResponse, [EarthquakeEvent]) -> Void)
 }
@@ -24,8 +27,18 @@ class LocalEarthquakeEventManager: EarthquakeEventManager {
     var cachedEarthquakeEvents: [EarthquakeEvent] = []
     private let apiClient: APIClient
     
-    init(apiClient: APIClient = APIClient()) {
+    var focusEventIdx: Int?
+    
+    var focusCoordinate: CLLocationCoordinate2D? {
         
+        if let idx = focusEventIdx {
+            return cachedEarthquakeEvents[idx].location
+        } else {
+            return nil
+        }
+    }
+    
+    init(apiClient: APIClient = APIClient()) {
         self.apiClient = apiClient
     }
     
