@@ -1,4 +1,4 @@
-# EarthqakeWatcher
+# EarthquakeWatcher
 
 Demo iOS project using the USGS earthquake API endpoint:  https://earthquake.usgs.gov/earthquakes/feed/v1.0/
 
